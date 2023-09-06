@@ -1,0 +1,449 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    height: 100vh;
+    background: url("..//assets/images/background.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 100px;
+    background: rgba(46, 139, 86, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+/*Avatar no lugar da logo*/
+.avatar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    margin: 20px;
+    width: 50px; /* Defina o tamanho desejado para o avatar */
+    height: 50px; /* Defina o tamanho desejado para o avatar */
+}
+
+.avatar img {
+    
+    border-radius: 10%; /* Adicione um efeito de borda arredondada ao avatar */
+}
+/*Avatar no lugar da logo*/
+
+
+/*-->>> BEGIN - BARRA DE NAVEGAÇÃO TOPO DA PÁGINA <<<-----------------------*/
+.navbar { /* Estilos para a barra de navegação */
+    position: fixed;
+    top: 0;
+    padding-top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background: rgba(46, 139, 86, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+/*-->>> END - BARRA DE NAVEGAÇÃO TOPO DA PÁGINA <<<-----------------------*/
+
+/*-->>> BEGIN - SUB MENU EM MUSIC NO ICONE MUSIC <<<-----------------------*/
+.submenu { /*Posicionamento e espaçamento entre os icones*/
+    position: absolute;
+    top: 70px;
+    left: -10px;
+    width: 80px;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    z-index: 10;
+    background: none;
+}
+.submenu a {/*espaçamento entre os icones youtube e spotify*/
+    text-decoration: none;
+    color: #0e2431;
+    margin: 5px 0; 
+    font-size: 14px;
+}
+.submenu.show {/* direção para onde da o efeito de leque*/
+    display: flex;
+    flex-direction: column;
+}
+
+
+.submenu-trigger i {
+    font-size: 24px;
+    color: #0e2431;
+    opacity: 0.8;
+    transition: 0.2s;
+    background-color: #20f708;
+    border-radius: 50%;
+    padding: 18px;
+    transform: rotate(-100deg);
+}
+
+.submenu-trigger i.bx-music:hover {
+    opacity: 1;
+}
+
+.submenu-trigger.show-submenu i.bxl-spotify,
+.submenu-trigger.show-submenu i.bxl-youtube {
+    display: inline;
+}
+
+.submenu-trigger:hover i {
+    opacity: 1;
+}
+/*-->>> END - SUB MENU EM MUSIC NO ICONE MUSIC <<<-----------------------*/
+.navbar a::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: 0.3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+nav { /* Posicionamento da barra de menu MENU SUN*/
+    position: absolute;
+    top: 74%; /* Posição vertical inicial */
+    left: 88%; /* Posição horizontal inicial */
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+}
+
+nav .nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-45deg);
+}
+
+.nav-content .toggle-btn,
+.nav-content span a {
+    height: 60px;
+    width: 60px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav-content .toggle-btn{
+    font-size: 35px;
+    color: #0e2431;
+    z-index: 100;
+    cursor: pointer;
+    transform: rotate(-225deg);
+    transition: all 0.6s ease;
+    
+}
+
+nav.open .toggle-btn{
+    transform: rotate(0deg);
+}
+
+.nav-content span {
+    position: absolute;
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+
+nav.open .nav-content span {
+    transform: rotate(calc(var(--i) * (360deg/8))) translateY(120px);
+    opacity: 1;
+}
+
+.nav-content span a{
+    text-decoration: none;
+    transform: rotate(45deg);
+}
+
+.nav-content span a i {
+    font-size: 24px;
+    color: #0e2431;
+    transform: rotate(calc(var(--i) * (360deg/ -8)));
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.nav-content span a:hover i{
+    opacity: 1;
+}
+
+/*------->>> BEGIN - ICONES REDES SOCIAIS <<<-------*/
+
+/*.bodyicon{ manter o conjunto de ices fixo no canto inferior esquerdo da tela, para usar essa opção tem que ocultar o .bodyicon{ seguinte
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    place-items: center;
+    padding: 10px;
+}*/
+
+.bodyicon{ /*posiciona o conjunto de redes sociais ao centro da tela*/
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.wrapper .button{/*ajusta configurações de cores da transparencia do fundo do icones das redes sociais*/
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    margin: 0 5px;
+    overflow: hidden;
+    background: #f9f8f804;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-out;
+    
+}
+
+/*.wrapper .button:hover .icon {
+    border: none;
+}*/
+
+.wrapper .button .icon{
+    display: inline-block;
+    text-align: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    line-height: 50px;
+    transition: all 0.3s ease-out;
+}
+
+.wrapper .button .icon i.fa-facebook-f {/* Cor interna do ícone do Facebook  */
+    font-size: 25px;
+    color: #2d6ffd; 
+    transition: color 0.3s ease-out;
+}
+
+/* Secção para ajustar cores internas dos icones das redes sociais*/
+.wrapper .button .icon i.fa-linkedin {/*linkedin*/
+    font-size: 25px;
+    color: #01a3ee; 
+    transition: color 0.3s ease-out;
+}
+
+.wrapper .button .icon i.fa-instagram {/*instagram*/
+    font-size: 25px;
+    color: #bc2a8d; 
+    transition: color 0.3s ease-out;
+}
+
+.wrapper .button .icon i.fa-whatsapp {/*whatsapp*/
+    font-size: 25px;
+    color: #15dd5e; 
+    transition: color 0.3s ease-out;
+}
+
+.wrapper .button .icon i.fa-discord {/*discord*/
+    font-size: 25px;
+    color: #7289d9; 
+    transition: color 0.3s ease-out;
+}
+
+.wrapper .button .icon i.fa-youtube {/*youtube*/
+    font-size: 25px;
+    color: #ff0000; 
+    transition: color 0.3s ease-out;
+}
+
+.wrapper .button .icon i.fa-github {/*github*/
+    font-size: 25px;
+    color: #171515; 
+    transition: color 0.3s ease-out;
+}
+
+/* Secção para ajustar cores interna do botão ao passar o mouse nos icones das redes sociais*/
+.wrapper .button:nth-child(1):hover .icon{
+    background: #3b5998;
+}
+
+.wrapper .button:nth-child(2):hover .icon{
+    background: #0e76a8;
+}
+
+.wrapper .button:nth-child(3):hover .icon{
+    background: #bc2a8d;
+}
+
+.wrapper .button:nth-child(4):hover .icon{
+    background:  #15dd5e;
+}
+
+.wrapper .button:nth-child(5):hover .icon{
+    background: #7289d9;
+}
+
+.wrapper .button:nth-child(6):hover .icon{
+    background: #ff0000;
+}
+
+.wrapper .button:nth-child(7):hover .icon{
+    background: #171515;
+}
+
+/*Estilização dos ícones dentro dos botões das redes sociais */
+.wrapper .button .icon i{
+    font-size: 22px;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+}
+
+/*Cor interna dos ícones dentro dos botões das redes sociais */
+.wrapper .button:hover .icon i{
+    color: #fff;
+}
+/*------->>> END - ICONES REDES SOCIAIS <<<-------*/
+
+.todolist{
+    width: 400px;
+    min-height: 400px;
+    background: linear-gradient(135deg, #667db6, #0082c8);
+    padding: 10px;
+}
+
+.todo-app {
+    width: 100%;
+    max-width: 600px;
+    background: #f7f7f7;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 20px;
+}
+
+.todo-app h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todo-app h2 img{
+    width: 30px;
+    margin-left: 10px;
+}
+
+.row {
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 50px;
+    padding-left: 30px;
+    margin-bottom: 25px;
+}
+
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    background: #01b1b7;
+    border-radius: 50px;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+ul li{
+    list-style: none;
+    font-size: 15px;
+    padding: 10px 8px 10px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before{
+    content: "";
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(..//assets/images/ToDoList/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 10px;
+    left: 8px;
+}
+
+ul li.checked{
+    color: #777;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url(..//assets/images/ToDoList/checked.png);
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #777;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover{
+    background: #f2f2f2;
+}

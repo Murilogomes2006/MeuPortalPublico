@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><!--Links e title-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon/qr32.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Meu portal</title>
+</head>
+
+<body><!--BEGIN - Corpo do sistema -->
+    <header class="header"> <!--BEGIN - Cabeçalho do portal e avatar-->
+        <a href="#" class="logo"></a>
+        <div class="navbar">
+            <a href="#"> Entreterimento</a>
+            <a href="#"> Estudos</a>
+            <a href="#"> Objetivos</a>
+        </div>
+        <!--<div class="avatar"> Avatar para criar usuarios futuramente
+            <img src=".//assets/images/Avatares/avatarboy1.jpg" alt="Meu Avatar">
+        </div>-->
+    </header><!--END - Cabeçalho do portal-->
+
+    <nav><!--BEGIN - Todos os icones do MENU SUN-->
+        <div class="nav-content">
+            <div class="toggle-btn"><!--Botão menu SUN-->
+                <i class='bx bx-sun'></i>
+            </div>
+            <span style="--i:1;"><!--Menu Home que da acesso as páginas home Murilo e Jaciane-->
+                <a href="www.google.com.br" target="_blank"><i class='bx bxs-home'></i></a>
+            </span>
+            <span style="--i:2;"><!--Menu Movie-->
+                <a href="https://www.netflix.com/browse" target="_blank"><i class='bx bx-movie-play'></i></a>
+            </span>
+            <span style="--i:3;"><!--SUB Menu music-->
+                <div class="submenu-trigger">
+                    <i class='bx bx-music'></i>
+                </div>
+                <div class="submenu" id="submenu">
+                    <a href="https://www.spotify.com" target="_blank"><i class='bx bxl-spotify'></i></a>
+                    <a href="https://music.youtube.com" target="_blank"><i class='bx bxl-youtube'></i></a>
+                </div>
+            </span>
+            <span style="--i:4;">
+                <a href="www.google.com.br"
+                target="_blank">
+                    <i class='bx bxl-microsoft'></i>
+                </a>
+                
+            </span>
+            <span style="--i:5;"><!--Menu Finanças-->
+                <a href="www.google.com.br" target="_blank"><i class='bx bxs-bank' ></i></a>
+            </span>
+            <span style="--i:6;"><!--Menu redes - Share-->
+                <a href="#"><i class='bx bx-share-alt'></i></a>
+            </span>
+            <span style="--i:7;"><!--Menu Senhas-->
+                <a href="www.google.com.br" target="_blank"><i class='bx bxs-key'></i></a>
+            </span>
+            <span style="--i:8;"><!--Menu novo-->
+                <a href="#"><i class='bx bx-icon-name'></i></a>
+            </span>
+        </div>
+    </nav><!--END - Todos os icones do MENU SUN-->
+
+    <div class="bodyicon"><!--BEGIN Botões das redes sociais-->
+        <div class="wrapper">
+            <div class="button">
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+            </div>
+            <div class="button">
+                <div class="icon">
+                    <i class="fab fa-linkedin"></i>
+                </div>
+            </div>
+            <div class="button">
+                <div class="icon">
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+            <div class="button">
+                <div class="icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+            </div>
+            <div class="button">
+                <div class="icon">
+                    <i class="fab fa-discord"></i>
+                </div>
+            </div>
+            <div class="button">
+                <div class="icon">
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+                <div class="button">
+                    <div class="icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                </div>
+                
+        </div>
+    </div> <!--END - Botões das redes sociais-->
+
+    <div class="todolist"> <!--Meu ToDoList-->
+        <div class="todo-app">
+            <h2>Check list <img src="./assets/images/ToDoList/icon.png" alt="To-Do List topo"></h2>
+            <div class="row">
+                <input type="text" id="input-box" placeholder="Adicionar tarefa">
+                <button onclick="addTask()">+</button>
+            </div>
+            <ul id="list-container">
+                <!--<li class="checked"><i class="fa-sharp fa-regular fa-badge-check"></i>To-do 01</li>
+                <li>To-do 02</li>
+                <li>To-do 03</li>-->
+            </ul>
+        </div>
+    </div>
+    <!--Meu ToDoList-->
+    
+    <script src="./assets/javascript/script.js"></script> <!--Script para o Javascript-->
+</body><!--END - Corpo do sistema -->
+
+</html>

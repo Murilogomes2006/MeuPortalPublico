@@ -1,0 +1,38 @@
+{
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "python.formatting.provider": "none",
+    "cSpell.words": [
+        "Adicionar",
+        "BARRA",
+        "botões",
+        "Cabeçalho",
+        "Corpo",
+        "criar",
+        "dentro",
+        "direção",
+        "efeito",
+        "espaçamento",
+        "estilização",
+        "futuramente",
+        "ICONE",
+        "ícones",
+        "interna",
+        "leque",
+        "NAVEGAÇÃO",
+        "normalmente",
+        "onde",
+        "PAGINA",
+        "PÁGINA",
+        "posicionamento",
+        "sociais",
+        "tarefa",
+        "Tarefas",
+        "texto",
+        "todolist",
+        "Todos",
+        "TOPO",
+        "usuarios"
+    ]
+}
